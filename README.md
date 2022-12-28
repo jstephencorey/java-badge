@@ -29,14 +29,15 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
       2. The String pool is there to save storage space - if you use the same string multiple times in code, every time you use it is references the same place in memory. (e.g. `a = "Hi"; b = "Hi";` - a and b point to the same memory location in the String Pool, and `a == b`)
       3. If you use `new String("Hello World")`, the string is saved in the heap but not in the String Pool, and it's reference points to a different memory location (e.g.`a = "Hi"; b = new String("Hi");` - a and b point to different memory locations, and `a != b`)
       4. Because of this nuance with String storage, you should always compare Strings with `.equals()`, which compares the value of the strings, instead of `==`, which compares the memory location (e.g. `"Hi" == "Hi"`, but `"Hi" != new String("Hi")`. However, `"Hi".equals(new String("Hi"))`)
+      5. See also `stringlist/StringListMemoryExperiment`
+
 3. Write an application to find out how many total characters can be held in a list of strings before you run out of memory:
    1. See `stringlist/StringListMemoryExperiment` - short answer: Overflowed a Long trying to figure it out
 
-4. Compare and contrast StringBuffer and StringBuilder and when to use each
-
-   1. StringBuilder and StringBuffer are almost exactly the same, except StringBuffer is thread-safe.  To be honest, I haven't yet
-   seen a legitimate reason to use StringBuffer, but that may just be due to my experience.  Generally, unless you need multi-
-   thread protection, StringBuilder is better to use simply because it can be more efficient (though only marginally so)
+4. Compare and contrast StringBuffer and StringBuilder and when to use each (Source: [This article](https://www.geeksforgeeks.org/difference-between-stringbuffer-and-stringbuilder-in-java/))
+   1. The API for both classes are practically the same, the main difference is threadsafeness/synchronization:
+      1. StringBuffer is synchronized, meaning only one thread can call its methods at a time. This means it's threadsafe, but it's slower on account of these checks.
+      2. StringBuilder is asynchronized, so multiple threads can call it at once. It is faster, but not threadsafe.
 
 5. Compare/contrast use of ArrayList / LinkedList / HashMap / HashSet / TreeSet
 
