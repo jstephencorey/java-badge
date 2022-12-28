@@ -1,6 +1,6 @@
-##Joseph Corey's Java Badge for FamilySearch
+## Joseph Corey's Java Badge for FamilySearch
 
-This project is to demonstrate the abilities and knowledge of Joseph Corey in Java, based off of the framework in [[This Confluence Page][https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge]]
+This project is to demonstrate the abilities and knowledge of Joseph Corey in Java, based off of the framework in [[This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge)]
 
 1. Describe the lifecycle of an object instance in Java and how garbage collection works: 
    1. When you instantiate an object (e.g. with the "new" key word) the jvm allocates heap memory for that object and sets up a reference so the runtime can track it, and it's instance variables are initialized do their default values.
@@ -8,13 +8,29 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
    3. When the object is no longer in scope, or otherwise unreachable (e.g. declared to be null), it will eventually be cleaned up by the java garbage collector, which frees up the memory and resources that object used. Or, you can manually call the garbage collector with Runtime.getRuntime().gc();
       1. The overridable function finalize may be called when the garbage collector is ready to delete it, but it's not guaranteed to do so.
       2. The java garbage collector periodically checks all objects in memory to see if they are eligible for garbage collection
-   4. Sources: (https://www.youtube.com/watch?v=ksflpaDy-qA, https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge, https://fhconfluence.churchofjesuschrist.org/display/~nufferpq/Perry+Nuffer%3A+Java+Apprentice+Badge)
+   4. Sources: ([This Video](https://www.youtube.com/watch?v=ksflpaDy-qA), [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge), [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~nufferpq/Perry+Nuffer%3A+Java+Apprentice+Badge))
 
-2. Describe how the basic data types are represented in memory 
-   1. (All primitives outside of a class (ie. isntance variables) are stored in the stack.  Objects and their fields are stored in the heap.) boolean: 1 bit (theoretically, probably actually a bit more), int: 32 bits, long: 64 bits, String: varies in size, but is placed in a special part of memory called the String pool (unless new String is specifically called, which is generally a no-no), array of ints: a specific number of side-by-side integers in memory, array of Objects: a specific number of references (essentially pointers) to objects side-by-side, class with fields: both the class and its instance variables (fields) are stored in the heap.)
-
+2. Describe how the basic data types are represented in memory (Sources: [This article](https://www.tutorialspoint.com/java/java_basic_datatypes.htm) and [this article](https://www.guru99.com/java-stack-heap.html))
+   1. Primitives:
+      1. byte - 8-bit (1 byte) signed int (-128 to 127)        (All primitives outside of a class (ie. instance variables) are stored in the stack.  Objects and their fields are stored in the heap.) boolean: 1 bit (theoretically, probably actually a bit more), int: 32 bits, long: 64 bits, String: varies in size, but is placed in a special part of memory called the String pool (unless new String is specifically called, which is generally a no-no), array of ints: a specific number of side-by-side integers in memory, array of Objects: a specific number of references (essentially pointers) to objects side-by-side, class with fields: both the class and its instance variables (fields) are stored in the heap.)
+      2. short - 16-bit (2 byte) signed int (-32,768 to 32,767)
+      3. int - 32-bit (4 byte) signed int (-2,147,483,648 to 2,147,483,647)
+      4. long - 64-bit (8 byte) signed int (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)
+      5. float - 32-bit single-precision floating point number
+      6. double - 64-bit double-precision floating point number
+      7. boolean - 1 bit, though it looks like in actuality they may take about a byte of memory, though this can depend on the  (Source: [Stack Overflow](https://stackoverflow.com/questions/383551/what-is-the-size-of-a-boolean-variable-in-java))
+   2. Objects & stack vs. heap:
+      1. Local variables (e.g. within a function) are located on the stack, as are methods and references to the objects stored in the heap
+      2. Objects are represented with their instance variables in the heap, with a reference to them stored on the stack
+   3. Arrays: (Source: [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~nufferpq/Perry+Nuffer%3A+Java+Apprentice+Badge), [This Stack Overflow](https://stackoverflow.com/questions/45893192/is-memory-to-array-allocated-on-stack-or-heap-in-java), and conflicting information from [This Article](https://www.geeksforgeeks.org/where-is-the-memory-allocated-for-arrays-in-java/))
+      1. Arrays are stored on the heap, with references to the arrays on the stack.
+   4. Strings: (Source: [This article](https://iq.opengenus.org/string-pool-in-java))
+      1. When you put a String Literal in code, it's stored in a special place in the heap called the String Pool.
+      2. The String pool is there to save storage space - if you use the same string multiple times in code, every time you use it is references the same place in memory. (e.g. `a = "Hi"; b = "Hi";` - a and b point to the same memory location in the String Pool, and `a == b`)
+      3. If you use `new String("Hello World")`, the string is saved in the heap but not in the String Pool, and it's reference points to a different memory location (e.g.`a = "Hi"; b = new String("Hi");` - a and b point to different memory locations, and `a != b`)
+      4. Because of this nuance with String storage, you should always compare Strings with `.equals()`, which compares the value of the strings, instead of `==`, which compares the memory location (e.g. `"Hi" == "Hi"`, but `"Hi" != new String("Hi")`. However, `"Hi".equals(new String("Hi"))`)
 3. Write an application to find out how many total characters can be held in a list of strings before you run out of memory:
-   1. See <stringlist/StringListMemoryExperiment> - short answer: Overflowed a Long trying to figure it out
+   1. See `stringlist/StringListMemoryExperiment` - short answer: Overflowed a Long trying to figure it out
 
 4. Compare and contrast StringBuffer and StringBuilder and when to use each
 
