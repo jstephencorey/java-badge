@@ -40,7 +40,7 @@ public class SortFile {
 
   public static void main(String[] args) {
     SortFile sortFile = new SortFile();
-    boolean sortReverse = true;
+    boolean sortReverse = true; // Change if you want it to be reversed or not
 
     List<String> fileLines = sortFile.readFileToList("C:\\dev\\java-badge\\src\\q6_sortfile\\big-file.txt");
 //    sort lines
