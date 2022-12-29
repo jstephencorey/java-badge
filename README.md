@@ -39,19 +39,41 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
       1. StringBuffer is synchronized, meaning only one thread can call its methods at a time. This means it's threadsafe, but it's slower on account of these checks.
       2. StringBuilder is asynchronized, so multiple threads can call it at once. It is faster, but not threadsafe.
 
-5. Compare/contrast use of ArrayList / LinkedList / HashMap / HashSet / TreeSet
+5. Compare/contrast use of ArrayList / LinkedList / HashMap / HashSet / TreeSet (Sources: [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge), [this article](https://www.golinuxcloud.com/arraylist-vs-linkedlist-in-java/), [this article](https://www.baeldung.com/java-arraylist-vs-linkedlist-vs-hashmap), [this documentation page](https://www.javatpoint.com/java-hashmap), and [this article](https://www.java67.com/2012/08/difference-between-hashset-and-treeset-java.html))
+   1. ArrayList:
+      1. Good for ordered lists of items, Best for if you just want to store and access data. Slower than a built-in array, but dynamically handles size.
+      2. Implements List interface, stores items with a dynamic array
+      3. Adding items to the end is fast, but adding to a specific index and removing items can be kind of slow because of working with the memory of the array. Accessing items is fast.
+      4. Can't store more than 2^32 items, no memory overhead
+   2. LinkedList
+      1. Good for ordered lists of items if you're doing lots of manipulation to the list
+      2. Implements both List and Dequeue interface, stores items with doubly-linked list
+      3. Adding and removing items is pretty fast, but accessing items is a bit slower than an ArrayList
+      4. No limitation on number of items, but some memory overhead from the pointers in the linked list
+   3. HashMap
+      1. Good for key-value pairs
+      2. Implements Map interface, stores items with hash map. Only unique keys can be used, and order is not maintained. It's not synchronized.
+      3. Adding items and retrieving items based on the key is fast, but finding an item without the key is slower.
+   4. HashSet
+      1. Good for fast unique unordered collections of items
+      2. Implements the Set interface, stores items in hash order. Only unique items can go in (when compared with `.equals()`), and order is not maintained. It's not synchronized.
+      3. Operations with HashSet are faster than with TreeSet, but order isn't maintained.
+   5. TreeSet
+      1. Good for unique ordered collections of items.
+      2. Implements the Set interface, stores items in a tree to maintain order. Only unique items can go in (when compared with `.compareTo()`). It's not synchronized.
+      3. Operations aren't quite as fast as with a HashSet, but order is maintained.
 
-   1. ArrayList acts like an array: it has a list of objects that are (at least as far as we can see) one after the other in memory.
-   ArrayList is great for random access.
-   LinkedList uses the linked list data structure, which uses pointers to point from one object to the next and previous objects in a list.
-   LinkedList is great for applications where you do a lot of insertions and removals.
-   HashMap maps keys to values within a hash map data structure, which stores them in different buckets based on their hash code
-   in order to improve performance.  The keys must be unique, the values don't have to be unique.
+         1. ArrayList acts like an array: it has a list of objects that are (at least as far as we can see) one after the other in memory.
+         ArrayList is great for random access.
+         LinkedList uses the linked list data structure, which uses pointers to point from one object to the next and previous objects in a list.
+         LinkedList is great for applications where you do a lot of insertions and removals.
+         HashMap maps keys to values within a hash map data structure, which stores them in different buckets based on their hash code
+         in order to improve performance.  The keys must be unique, the values don't have to be unique.
 
-   2. HashMaps are great when you need unordered maps of keys and values.  
-   HashSet is similar to a List, but only keeps unique values.  In Java a HashSet actually encapsulates a HashMap, and simply
-   stores keys with empty values.
-   TreeSet is similar to HashSet, but with ordered values.  TreeSet is advantageous over HashSet when you need things to be ordered for some reason, such as for iteration.
+         2. HashMaps are great when you need unordered maps of keys and values.  
+         HashSet is similar to a List, but only keeps unique values.  In Java a HashSet actually encapsulates a HashMap, and simply
+         stores keys with empty values.
+         TreeSet is similar to HashSet, but with ordered values.  TreeSet is advantageous over HashSet when you need things to be ordered for some reason, such as for iteration.
 
 
 6. Write an application to read a file with 10k lines of text, and output another file with the lines in sorted order (sample file)
