@@ -40,12 +40,17 @@ public class SortFile {
 
   public static void main(String[] args) {
     SortFile sortFile = new SortFile();
+    boolean sortReverse = true;
 
     List<String> fileLines = sortFile.readFileToList("C:\\dev\\java-badge\\src\\q6_sortfile\\big-file.txt");
-    System.out.println(fileLines);
 //    sort lines
     Collections.sort(fileLines);
-    System.out.println(fileLines);
-    sortFile.writeListToFile("C:\\dev\\java-badge\\src\\q6_sortfile\\big-file-sorted.txt", fileLines);
+    if (sortReverse) {
+      Collections.reverse(fileLines);
+      sortFile.writeListToFile("C:\\dev\\java-badge\\src\\q6_sortfile\\big-file-sorted-reverse.txt", fileLines);
+    }
+    else {
+      sortFile.writeListToFile("C:\\dev\\java-badge\\src\\q6_sortfile\\big-file-sorted.txt", fileLines);
+    }
   }
 }

@@ -77,9 +77,9 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
 
 
 6. Write an application to read a file with 10k lines of text, and output another file with the lines in sorted order (sample file)
-SortFile.java 
+   1. See `q6_sortfile/SortFile.java`
 7. Write an application to read a file with 10k lines of text, and output another file with the lines in reverse sorted order
-RSortFile.java 
+   1. See `q6_sortfile/RSortFile.java` 
 8. Write code to show exception handling including examples of checked, unchecked, and Error exceptions: For Error exception handling, see my TotalChar file, that's what I use to get the number of characters.
 ExceptionHandling.java 
 9. Write your own enum type.  Describe when you would use it: It's pretty simple, part of a program I used to practice using the Builder pattern and TestNg.  It simply is an enum of the different types of measure used for nutrition labels.  I might eventually add more to it, but there's not much need.
