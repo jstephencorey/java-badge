@@ -1,4 +1,4 @@
-package stringlist;
+package q2_stringlist;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -19,6 +19,7 @@ public class StringListMemoryExperiment {
     long totalNumCharacters = 0L;
     String str = memoryExperiment.getString(charsPerString);
     assert(charsPerString == str.length());
+    assert(str.length() > 0);
     System.out.printf("Beginning test with a string of length %s \n", charsPerString);
     while (memoryExperiment.getAvailableMemory() >= 0L){
       try {

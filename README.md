@@ -29,10 +29,10 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
       2. The String pool is there to save storage space - if you use the same string multiple times in code, every time you use it is references the same place in memory. (e.g. `a = "Hi"; b = "Hi";` - a and b point to the same memory location in the String Pool, and `a == b`)
       3. If you use `new String("Hello World")`, the string is saved in the heap but not in the String Pool, and it's reference points to a different memory location (e.g.`a = "Hi"; b = new String("Hi");` - a and b point to different memory locations, and `a != b`)
       4. Because of this nuance with String storage, you should always compare Strings with `.equals()`, which compares the value of the strings, instead of `==`, which compares the memory location (e.g. `"Hi" == "Hi"`, but `"Hi" != new String("Hi")`. However, `"Hi".equals(new String("Hi"))`)
-      5. See also `stringlist/StringListMemoryExperiment`
+      5. See also `misc/StringBuilderStringBufferTest`
 
 3. Write an application to find out how many total characters can be held in a list of strings before you run out of memory:
-   1. See `stringlist/StringListMemoryExperiment` - short answer: Overflowed a Long trying to figure it out
+   1. See `q2_stringlist/StringListMemoryExperiment` - short answer: Overflowed a Long trying to figure it out
 
 4. Compare and contrast StringBuffer and StringBuilder and when to use each (Source: [This article](https://www.geeksforgeeks.org/difference-between-stringbuffer-and-stringbuilder-in-java/))
    1. The API for both classes are practically the same, the main difference is threadsafeness/synchronization:
