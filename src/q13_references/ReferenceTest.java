@@ -15,7 +15,7 @@ public class ReferenceTest {
   public static int[] testPassByChanges(int byValue, ReferenceTest reference) {
     byValue = 1;
     reference.byReference = 1;
-    reference.byFinal = 1; // this is an error and causes the program to fail
+//    reference.byFinal = 1; // this is an error and causes the program to fail if you uncomment it
     return new int[]{byValue, reference.byReference, reference.byFinal};
   }
 
@@ -27,7 +27,7 @@ public class ReferenceTest {
     System.out.println(referenceTest.byReference); // 1 - changed the referenced variable
     System.out.println(referenceTest.byFinal); // 2, you can't reassign a final variable
     for (int num: ints) {
-      System.out.println(num); //1, 1, and fails
+      System.out.println(num); //1, 1, and fails (2)
     }
   }
 }

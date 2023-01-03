@@ -112,7 +112,13 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
        2. When you pass an item by reference, any change to the item's value in the method "leaks" out of the method. (I think one of the paradigms of functional programming is to avoid this entirely)
        3. When you try to alter a final variable after it has first been set, it won't succeed and will throw an error (though you can pass the value of the final variable in, and it works as a pass-by-value)
 
-14. Write code to show how access modifiers work: private, protected, and public, talk about why you would use each of these. Private: Only the class can access the resource.  Protected: The Class, the same package, and any subclasses can access the resource. Public: Anything can access the resource.  Also: Package local/private (Default): Anything class within the package can access the resource, but not necessarily subclasses (they have to be in the same package).
+14. Write code to show how access modifiers work: private, protected, and public, talk about why you would use each of these. 
+    1. See `q14_access_modifiers` and all the code in there for examples.
+    2. When to use (see also the discussion in 12.2):
+       1. Private: default if you can, only accessable within the same class.
+       2. Protected: Use if you want it to be accessable within the package, but don't need access outside the package.
+       3. Public: Only use if you need access outside of the package. Generally only methods should be public, you should really try to just access fields in a class through getters and setters.
+
 15. Write code to show how virtual method invocation lets one implementation be swapped for another.
 
 16. Write code that uses the instanceof operator and show how casting works.
