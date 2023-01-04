@@ -120,7 +120,8 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
        3. Public: Only use if you need access outside of the package. Generally only methods should be public, you should really try to just access fields in a class through getters and setters.
 
 15. Write code to show how virtual method invocation lets one implementation be swapped for another.
-
+    1. This isn't the best version of this idea, but in general methods can be swapped out with each other in differrent subclasses. This would often be used like different sorting algorithms, or different classes for accessing different data stores. In this simple case, `PositiveConversation` and `NegativeConversation` will do different things when asked to "talk".
+    
 16. Write code that uses the instanceof operator and show how casting works.
 
 17. Show how to override a method in a subclass, talk about plusses and minuses in doing so. See VirtualMethod. Plusses: You can have generic logic in the super class, and more specific logic in the subclasses.  You can also call the super class in the overridden method and use the logic already there.  Cons: It's generally not a good idea to override code that has already been written, because it may end up doing something either you or the client doesn't expect. It's better to use something like the Template Method Pattern.
