@@ -1,0 +1,12 @@
+16:43:09.715 [main] DEBUG q19_logging.LoggerTest - stuff=23
+16:43:09.717 [main] INFO  q19_logging.LoggerTest - things=[9, 8]
+16:43:09.718 [main] DEBUG q19_logging.LoggerTest - debug=34
+16:43:09.718 [main] INFO  q19_logging.LoggerTest - info=7
+16:43:09.718 [main] WARN  q19_logging.LoggerTest - warn=90
+16:43:09.718 [main] ERROR q19_logging.LoggerTest - error=-2
+16:47:41.304 [main] DEBUG q19_logging.LoggerTest - stuff=23
+16:47:41.306 [main] INFO  q19_logging.LoggerTest - things=[9, 8]
+16:47:41.306 [main] DEBUG q19_logging.LoggerTest - debug=34
+16:47:41.307 [main] INFO  q19_logging.LoggerTest - info=7
+16:47:41.307 [main] WARN  q19_logging.LoggerTest - warn=90
+16:47:41.307 [main] ERROR q19_logging.LoggerTest - error=-2

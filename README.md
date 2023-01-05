@@ -132,7 +132,7 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
     1. See `q17_overwrite/Conversation.java` and `q17_overwrite/CustomConversation.java`. CustomConversation overrides the constructor of Conversation and allows you to define your own sentences for the conversation. Overriding constructors like this makes it hard for you to always know what exactly you're interacting with, and how to do so. If the code is mixed up so that the order of variables changes with different constructors, that can make it a pain to work with as well. 
 
 19. Write an application that uses the slf4j logging library directly (can also choose log4j if you want) See VirtualMethod.
-    1. Do the following:
+    1. Do the following: - See `logback.xml` and `q19_logging/LoggerTest.java`
        1. configure the logging using an accepted department log statement format (see [Application Logging](https://fhconfluence.churchofjesuschrist.org/display/DPT/Application+Specific+Logging))
        2. log at different logging levels (error, warn, info, debug), to see the effect of the default logging level setting
        3. turn on DEBUG in the logging config to show DEBUG output

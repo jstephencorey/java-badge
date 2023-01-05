@@ -10,10 +10,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/slf4j-api-2.0.6.jar!/" />
+          <root url="jar://$MODULE_DIR$/logback-classic-1.1.8.jar!/" />
+          <root url="jar://$MODULE_DIR$/logback-core-1.1.8.jar!/" />
+          <root url="file://$MODULE_DIR$" />
+          <root url="file://$MODULE_DIR$" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/src" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$" recursive="false" />
       </library>
     </orderEntry>
   </component>
