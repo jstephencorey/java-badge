@@ -123,13 +123,17 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
     1. This isn't the best version of this idea, but in general methods can be swapped out with each other in differrent subclasses. This would often be used like different sorting algorithms, or different classes for accessing different data stores. In this simple case, `PositiveConversation` and `NegativeConversation` will do different things when asked to "talk".
     
 16. Write code that uses the instanceof operator and show how casting works.
+    1. See `q16_instanceof/Casting.java`
+    
+17. Show how to override a method in a subclass, talk about plusses and minuses in doing so.  
+    1. See `q17_overwrite/Conversation.java` and `q17_overwrite/RandomConversation.java`. Conversation.java is a simple conversation class that iterates through a set of sentences to have a "conversation", repeating when it runs out of sentences. RandomConversation uses a lot of the same code, but it outputs a random sentence, instead of in order. Overwriting the `talk()` method allowed me to change the logic behind the method call in each class, while being able to interact with them the same. An alternative would be to have a `talk()` method in the Conversation class and a `randomTalk()` method that the RandomConversation class had. This makes it a pain to deal with, and you have to know what you're interacting with. I couldn't just plug and play different Conversation classes. A downside is that you may expect a class to always behave one way, but if a method is overridden, it will behave differently.
 
-17. Show how to override a method in a subclass, talk about plusses and minuses in doing so. See VirtualMethod. Plusses: You can have generic logic in the super class, and more specific logic in the subclasses.  You can also call the super class in the overridden method and use the logic already there.  Cons: It's generally not a good idea to override code that has already been written, because it may end up doing something either you or the client doesn't expect. It's better to use something like the Template Method Pattern.
-Show how to overload constructors and methods, talk about plusses and minuses in doing so. See overloading. Plusses: Allows you to use a number of different arguments to either create an object or use a method, making them more versatile.  Minuses: You have to be very careful how you implement them, as they can often be confusing: you should never rearrange the order of variables as you add more arguments.  It also may not be very clear what the method or constructor is doing, and it may be more clear if you just have a method with a different name.  You should also consider using the Builder pattern instead, if doing constructors (Especially if you end up with more than 3-4 constructors).
-Library
-18. Write an application that uses the slf4j logging library directly (can also choose log4j if you want) See VirtualMethod.
+18. Show how to overload constructors and methods, talk about plusses and minuses in doing so.
+    1. See `q17_overwrite/Conversation.java` and `q17_overwrite/CustomConversation.java`. CustomConversation overrides the constructor of Conversation and allows you to define your own sentences for the conversation. Overriding constructors like this makes it hard for you to always know what exactly you're interacting with, and how to do so. If the code is mixed up so that the order of variables changes with different constructors, that can make it a pain to work with as well. 
+
+19. Write an application that uses the slf4j logging library directly (can also choose log4j if you want) See VirtualMethod.
     1. Do the following:
-       1. configure the logging using an accepted department log statement format (see Application Logging)
-       log at different logging levels (error, warn, info, debug), to see the effect of the default logging level setting
-       2. turn on DEBUG in the logging config to show DEBUG output
-       3. configure logging to go to both the console and a log file
+       1. configure the logging using an accepted department log statement format (see [Application Logging](https://fhconfluence.churchofjesuschrist.org/display/DPT/Application+Specific+Logging))
+       2. log at different logging levels (error, warn, info, debug), to see the effect of the default logging level setting
+       3. turn on DEBUG in the logging config to show DEBUG output
+       4. configure logging to go to both the console and a log file
