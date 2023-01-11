@@ -8,9 +8,9 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
    3. When the object is no longer in scope, or otherwise unreachable (e.g. declared to be null), it will eventually be cleaned up by the java garbage collector, which frees up the memory and resources that object used. Or, you can manually call the garbage collector with Runtime.getRuntime().gc();
       1. The overridable function finalize may be called when the garbage collector is ready to delete it, but it's not guaranteed to do so.
       2. The java garbage collector periodically checks all objects in memory to see if they are eligible for garbage collection
-   4. Sources: ([this video](https://www.youtube.com/watch?v=ksflpaDy-qA), [this confluence page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge), [this confluence page](https://fhconfluence.churchofjesuschrist.org/display/~nufferpq/Perry+Nuffer%3A+Java+Apprentice+Badge))
+   4. Sources: ([This Video](https://www.youtube.com/watch?v=ksflpaDy-qA), [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge), [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~nufferpq/Perry+Nuffer%3A+Java+Apprentice+Badge))
 
-2. Describe how the basic data types are represented in memory (Sources: [this article](https://www.tutorialspoint.com/java/java_basic_datatypes.htm) and [this article](https://www.guru99.com/java-stack-heap.html))
+2. Describe how the basic data types are represented in memory (Sources: [This Article](https://www.tutorialspoint.com/java/java_basic_datatypes.htm) and [This Article](https://www.guru99.com/java-stack-heap.html))
    1. Primitives:
       1. byte - 8-bit (1 byte) signed int (-128 to 127)
       2. short - 16-bit (2 byte) signed int (-32,768 to 32,767)
@@ -18,13 +18,13 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
       4. long - 64-bit (8 byte) signed int (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)
       5. float - 32-bit single-precision floating point number
       6. double - 64-bit double-precision floating point number
-      7. boolean - 1 bit, though it looks like in actuality they may take about a byte of memory, though this can depend on the  (Source: [this stack overflow question](https://stackoverflow.com/questions/383551/what-is-the-size-of-a-boolean-variable-in-java))
+      7. boolean - 1 bit, though it looks like in actuality they may take about a byte of memory, though this can depend on the  (Source: [This Stack Overflow Question](https://stackoverflow.com/questions/383551/what-is-the-size-of-a-boolean-variable-in-java))
    2. Objects & stack vs. heap:
       1. Local variables (e.g. within a function) are located on the stack, as are methods and references to the objects stored in the heap
       2. Objects are represented with their instance variables in the heap, with a reference to them stored on the stack
-   3. Arrays: (Source: [this confluence page](https://fhconfluence.churchofjesuschrist.org/display/~nufferpq/Perry+Nuffer%3A+Java+Apprentice+Badge), [this stack overflow question](https://stackoverflow.com/questions/45893192/is-memory-to-array-allocated-on-stack-or-heap-in-java), and conflicting information from [this article](https://www.geeksforgeeks.org/where-is-the-memory-allocated-for-arrays-in-java/))
+   3. Arrays: (Source: [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~nufferpq/Perry+Nuffer%3A+Java+Apprentice+Badge), [This Stack Overflow Question](https://stackoverflow.com/questions/45893192/is-memory-to-array-allocated-on-stack-or-heap-in-java), and conflicting information from [This Article](https://www.geeksforgeeks.org/where-is-the-memory-allocated-for-arrays-in-java/))
       1. Arrays are stored on the heap, with references to the arrays on the stack.
-   4. Strings: (Source: [this article](https://iq.opengenus.org/string-pool-in-java))
+   4. Strings: (Source: [This Article](https://iq.opengenus.org/string-pool-in-java))
       1. When you put a String Literal in code, it's stored in a special place in the heap called the String Pool.
       2. The String pool is there to save storage space - if you use the same string multiple times in code, every time you use it is references the same place in memory. (e.g. `a = "Hi"; b = "Hi";` - a and b point to the same memory location in the String Pool, and `a == b`)
       3. If you use `new String("Hello World")`, the string is saved in the heap but not in the String Pool, and it's reference points to a different memory location (e.g.`a = "Hi"; b = new String("Hi");` - a and b point to different memory locations, and `a != b`)
@@ -34,12 +34,12 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
 3. Write an application to find out how many total characters can be held in a list of strings before you run out of memory:
    1. See `q2_stringlist/StringListMemoryExperiment` - short answer: Overflowed a Long trying to figure it out
 
-4. Compare and contrast StringBuffer and StringBuilder and when to use each (Source: [this article](https://www.geeksforgeeks.org/difference-between-stringbuffer-and-stringbuilder-in-java/))
+4. Compare and contrast StringBuffer and StringBuilder and when to use each (Source: [This Article](https://www.geeksforgeeks.org/difference-between-stringbuffer-and-stringbuilder-in-java/))
    1. The API for both classes are practically the same, the main difference is threadsafeness/synchronization:
       1. StringBuffer is synchronized, meaning only one thread can call its methods at a time. This means it's threadsafe, but it's slower on account of these checks.
       2. StringBuilder is asynchronized, so multiple threads can call it at once. It is faster, but not threadsafe.
 
-5. Compare/contrast use of ArrayList / LinkedList / HashMap / HashSet / TreeSet (Sources: [this confluence page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge), [this article](https://www.golinuxcloud.com/arraylist-vs-linkedlist-in-java/), [this article](https://www.baeldung.com/java-arraylist-vs-linkedlist-vs-hashmap), [this documentation page](https://www.javatpoint.com/java-hashmap), and [this article](https://www.java67.com/2012/08/difference-between-hashset-and-treeset-java.html))
+5. Compare/contrast use of ArrayList / LinkedList / HashMap / HashSet / TreeSet (Sources: [This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge), [This Article](https://www.golinuxcloud.com/arraylist-vs-linkedlist-in-java/), [This Article](https://www.baeldung.com/java-arraylist-vs-linkedlist-vs-hashmap), [This Documentation Page](https://www.javatpoint.com/java-hashmap), and [This Article](https://www.java67.com/2012/08/difference-between-hashset-and-treeset-java.html))
    1. ArrayList:
       1. Good for ordered lists of items, Best for if you just want to store and access data. Slower than a built-in array, but dynamically handles size.
       2. Implements List interface, stores items with a dynamic array
@@ -81,18 +81,18 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
 11. Create and overload constructors -- Create a class that has 4 fields and construct the class with variations of one required field and the others are optional.  Use constructor chaining as an example. 
     1. See `q11_constructors/Account.java` - this is a hypothetical bank account with an id, and an option to make it a kid's/vip account, and start with a certain amount of money. 
 
-12. Apply encapsulation principles to a class -- (Sources: [this article](https://www.geeksforgeeks.org/encapsulation-in-java/), [this article](https://www.w3schools.in/java/encapsulation), [this article](https://www.geeksforgeeks.org/access-modifiers-java/))
+12. Apply encapsulation principles to a class -- (Sources: [This Article](https://www.geeksforgeeks.org/encapsulation-in-java/), [This Article](https://www.w3schools.in/java/encapsulation), [This Article](https://www.geeksforgeeks.org/access-modifiers-java/))
     1. Show an example of good encapsulation.  
        1. See `q12_encapsulation/Rectangle.java` - This encapsulation has checks for setters, and a getter for area as well as width and height. Good encapsulation can also include removing getters or setters if you want to control access, e.g. to make some items read-only or write-only.
     2. Show a bad example of encapsulation and explain why.  
        1. See `q12_encapsulation/Account.java` - This is an example of bad encapsulation for a few reasons. Even though the class variables are private, they are all accessible through getters and setters. Especially concerning is the ability to just change the ID, and the ability to read and write the secretAccessKey, which should be at least write protected, and probably read-protected as well (Likely the architecture would be very different if you were doing this as a whole project, but if I had to do it as close to this way as possible, I'd probably have a method for checking if a given secretAccountKey is equal to the object's key. 
     3. Additionally explain access modifiers and how they can be used as part of the class encapsulation. 
        1. Default - if there's no specific access modifier, you can access those methods/data from within the same package.
-       2. Private - you can only access that variable/method within that class (and not within subclasses). Good for variables and methods that you don't want other classes to have access to, (e.g. the secretAccessKey I mentioned above)
+       2. Private - you can only access that variable/method within that class (and not within subclasses). Good for variables and methods that you don't want other classes to have access to, (e.g. the secretAccessKey I mentioned above). Generally it's best to try to keep things as private as possible.
        3. Protected - you can only access that variable/method within that package and within subclasses in other packages. 
        4. Public - you can access that variable/method anywhere
        5. Package-Protected - Same thing as default, only accessible within the same package. 
-       Generally it's best to try to keep things as private as you can. Things that don't need to be public shouldn't be.
+        Things that don't need to be public shouldn't be.
 
 13. Determine the effect upon object references and primitive values when they are passed  into methods that change the values -- Create a method 3 parameters, one parameter passed by value, one passed by reference and one with the keyword final.  Explain each and what the effects in side the method that changes each one. 
     1. See `q13_references/ReferenceTest.java`:
