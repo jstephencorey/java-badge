@@ -24,7 +24,7 @@ public class LoggerTest {
     logger.trace("trace={}", 3);
     logger.debug("debug={}", 34);
     logger.info("info={}", 7);
-    logger.warn("warn={}", 90);
-    logger.error("error={}", -2);
+    logger.warn("warn={}", -90);
+    logger.error("error={}", "Stuff happened");
   }
 }

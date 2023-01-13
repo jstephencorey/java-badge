@@ -1,6 +1,6 @@
 ## Joseph Corey's Java Badge for FamilySearch
 
-This project is to demonstrate the abilities and knowledge of Joseph Corey in Java, based off of the framework in [[This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/~pattonjm/Core+Skills+-+Java%3A+Apprentice+Badge)]
+This project is to demonstrate the abilities and knowledge of Joseph Corey in Java, based off of the framework in [[This Confluence Page](https://fhconfluence.churchofjesuschrist.org/display/Product/Core+Skills+-+Java+-+Apprentice)]
 
 1. Describe the lifecycle of an object instance in Java and how garbage collection works: 
    1. When you instantiate an object (e.g. with the "new" key word) the jvm allocates heap memory for that object and sets up a reference so the runtime can track it, and it's instance variables are initialized do their default values.
@@ -69,9 +69,9 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
    1. See `q6_sortfile/SortFile.java`, setting `boolean sortReverse = true;`
 8. Write code to show exception handling including examples of checked, unchecked, and Error exceptions
    1. See `q8_exceptions/ExceptionHandler.java`
-9. Write your own enum type.
-   1. See `q9_enum/LicenceTypeEnum.java`
-##Working with Methods, Encapsulation and Inheritance
+9. Write your own enum type. Describe when you would use it.
+   1. See `q9_enum/LicenceTypeEnum.java` and the javadoc for that class
+## Working with Methods, Encapsulation and Inheritance
 10. Show how to use a common piece of logic from two different classes, in three different ways: 1) by composition, 2) by inheritance, and 3) by static method calls, discuss the tradeoffs - 
     My examples are pretty simple, and not the most practical for use, but they illustrate the point. 
     1. The first one uses an Engine class with a method for figuring out range, and the Car class calls that. This is good for putting things that conceptually belong in one class only in that class, in a way you can access in that class. This is also used for "has-a" relationships - a car has an engine. Unlike static methods, this would be something a bit more involved, or accessing instance variables. See `q10_logic_sharing/composition`.
@@ -119,6 +119,7 @@ This project is to demonstrate the abilities and knowledge of Joseph Corey in Ja
 18. Show how to overload constructors and methods, talk about plusses and minuses in doing so.
     1. See `q17_overwrite/Conversation.java` and `q17_overwrite/CustomConversation.java`. CustomConversation overrides the constructor of Conversation and allows you to define your own sentences for the conversation. Overriding constructors like this makes it hard for you to always know what exactly you're interacting with, and how to do so. If the code is mixed up so that the order of variables changes with different constructors, that can make it a pain to work with as well. 
 
+## Library
 19. Write an application that uses the slf4j logging library directly (can also choose log4j if you want) See VirtualMethod.
     1. Do the following: - See `logback.xml` and `q19_logging/LoggerTest.java`
        1. configure the logging using an accepted department log statement format (see [Application Logging](https://fhconfluence.churchofjesuschrist.org/display/DPT/Application+Specific+Logging))
